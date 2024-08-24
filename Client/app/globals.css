@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    color: white;
+    background-color: black;
+}
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 0.5rem;
+}
+
+
+
+footer{
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    row-gap: 1rem;
+}
+
+footer a:hover{
+    background-color: rgba(248, 248, 248, 0.363);
+}

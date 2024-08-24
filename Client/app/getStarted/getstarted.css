@@ -1,0 +1,104 @@
+.container {
+  color: black;
+  background-color: white;
+  height: 100vh;
+}
+
+
+/* Navbar */
+
+.get-navbar{
+  width: 80%;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.logo{
+  font-size: 2.5rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 700;
+  color: red;
+}
+
+.sign-in{
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: red;
+  color: rgb(255, 255, 255);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 10px;
+}
+
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-wrapper form {
+  max-width: 440px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.form-wrapper input {
+    line-height: 1.5;
+    padding: 1.5rem 1rem 0.5rem 1rem;
+    width: 100%;
+    border: 1px solid red;
+    background: rgba(255, 255, 255, 0.137);
+}
+
+.form-wrapper input[type="submit"] {
+    background-color: red;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-wrapper span:nth-child(2){
+    font-size: 2rem;
+    font-weight: 700;
+}
+.form-wrapper span:nth-child(3){
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Floating Label */
+
+.password-box {
+  position: relative;
+  width: 100%;
+}
+
+.floating-label {
+  width: 100%;
+  position: absolute;
+  
+  top: 25%; 
+  left: 20px;
+  font-size: 18px;
+  cursor: text;
+  color: #000000;
+  transition: font-size 0.1s ease, top 0.1s ease, transform 0.1s ease;
+}
+
+.password-box input:focus ~ .floating-label,
+.password-box input:valid ~ .floating-label {
+  font-size: 11px;
+  top: 7px;
+  font-weight:700 ;
+}

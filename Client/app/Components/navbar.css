@@ -1,0 +1,31 @@
+.navbar{
+    width: 90%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .logo{
+    font-size: 2.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 700;
+    color: red;
+  }
+
+  .nav-btn{
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+   
+  }
+
+  .nav-btn:hover{
+    border-bottom: 2px solid red;
+  }
+  
+  .navbar div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
