@@ -22,7 +22,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public User login(@RequestParam String username, @RequestParam String password) {
-        return authService.authenticate(username, password);
+    public String login(@RequestParam String username, @RequestParam String password) {
+        return authService.authenticate(username, password); // Return the JWT token
     }
 }
