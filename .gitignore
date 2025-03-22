@@ -4,6 +4,8 @@ node_modules/
 # Ignore .env files in any folder
 .env
 .env*.local
+.env.production
+.env.development
 
 # Yarn PnP files
 /.pnp

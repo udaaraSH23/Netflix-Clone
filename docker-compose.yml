@@ -1,29 +1,75 @@
 version: "3.8"
 
 services:
+  frontend:
+    build:
+      context: ./Client
+      dockerfile: ../Containers/Frontend/Dockerfile.${NODE_ENV}
+    ports:
+      - "${FRONTEND_PORT}:3000"
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - CHOKIDAR_USEPOLLING=true  # Add this to enable polling for file changes
+    volumes:
+      - ./Client:/app  # Mount local files into the container
+      - /app/node_modules  # Prevents conflicts with host node_modules
+
+  backend:
+    image: server-${BACKEND}
+    build:
+      context: server-${BACKEND}
+      dockerfile: ../Containers/server-${BACKEND}/Dockerfile.${NODE_ENV}
+    ports:
+      - "${EXPRESS_PORT}:${EXPRESS_PORT}"
+      - "${SPRINGBOOT_PORT}:${SPRINGBOOT_PORT}"
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - MONGO_URI=${MONGO_URI}
+      - SPRING_DATASOURCE_URL=jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/${MYSQL_DATABASE}
+      - SPRING_DATASOURCE_USERNAME=${MYSQL_USER}
+      - SPRING_DATASOURCE_PASSWORD=${MYSQL_PASSWORD}
+    depends_on:
+      - ${BACKEND_DB}
+    volumes:
+      - ./server-${BACKEND}:/app
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo-container
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    restart: unless-stopped
+    environment:
+      - MONGO_INITDB_DATABASE=netflix-clone
+
   mysql:
     image: mysql:latest
     container_name: mysql-container
-    restart: unless-stopped
-    environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: mydatabase
-      MYSQL_USER: myuser
-      MYSQL_PASSWORD: mypassword
     ports:
-      - "3306:3306"
+      - "${MYSQL_PORT}:${MYSQL_PORT}"
     volumes:
       - mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    restart: unless-stopped
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin-container
-    restart: unless-stopped
-    environment:
-      PMA_HOST: mysql
-      MYSQL_ROOT_PASSWORD: rootpassword
     ports:
-      - "8080:80"
+      - "8081:80"  # Access phpMyAdmin at http://localhost:8080
+    environment:
+      PMA_HOST: mysql  # Connect to the mysql container
+      MYSQL_ROOT_PASSWORD: rootpassword  # Use the same root password as in the mysql service
+    depends_on:
+      - mysql
+    restart: unless-stopped
 
 volumes:
+  mongo_data:
   mysql_data:

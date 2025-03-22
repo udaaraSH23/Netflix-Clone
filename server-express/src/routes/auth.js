@@ -5,6 +5,11 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/userModel.js');
 
 // POST /login
+
+router.get('/', async (req, res) => {
+    return "Auth Route"
+});
+
 router.post('/login', async (req, res) => {
     try {
         // Find the user by email
