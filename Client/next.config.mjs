@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    output:'standalone',
     reactStrictMode: true,
     swcMinify: true,
     // except for webpack, other parts are left as generated

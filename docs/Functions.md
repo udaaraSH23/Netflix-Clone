@@ -1,6 +1,6 @@
 # Important Functions -Backend - Express
 
-## config
+## Config
 **db.js** - Connect to MongoDb
 
 ## Middlewear
@@ -15,4 +15,33 @@
 
 **movieModel.js** - Model for movie
 
+## Controller
 
+**userController.js** - Controller Logic for user
+
+**tvSeriesController.js** - Controller Logic for user
+
+**reviewController.js** - Controller Logic for user
+
+**MovieController.js** - Controller Logic for user
+
+
+## Repository
+
+**userRepository.js** - repository functions of user
+
+**tvSeriesRepository.js** - repository functions of tvSeries
+
+**reviewRepository.js** - repository functions of reviews
+
+**movieRepository.js** - repository functions of movies
+
+## Service
+
+**userService.js** - service functions of user
+
+**tvSeriesService.js** - service functions of tv Series
+
+**reviewService.js** - service functions of reviews
+
+**movieService.js** - service functions of movies

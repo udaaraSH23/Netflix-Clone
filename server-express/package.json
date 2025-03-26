@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon -V --config nodemon.json"
+    "dev": "nodemon -V --config nodemon.json",
+    "start": "node src/server.js"
   },
   "author": "",
   "license": "ISC",

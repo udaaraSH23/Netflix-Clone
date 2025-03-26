@@ -3,7 +3,7 @@
 - [ ] Refactor authentication logic
 - [ ] Add API documentation
 
-
+&nbsp; 
 # Backend - Express
 
 ### Auth
@@ -12,6 +12,23 @@
 - [ ] Password Hashing
 
 ### Controller
-- Separate to controoler from routes
+- Separate to controller from routes
+- Create Service Classes
 ### Repository
 - Add repository functions
+
+&nbsp; 
+
+# Frontend 
+
+### Technologies
+
+- [ ] Add Api Calls
+- [ ] Add Tailwind
+- [ ] Add TypeScript
+
+ ### UI UX
+
+ - [ ] Admin Panel
+ - [ ] MOvie Page, Tvseries Page
+ - [ ] Component Structure

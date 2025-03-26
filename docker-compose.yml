@@ -10,9 +10,7 @@ services:
     environment:
       - NODE_ENV=${NODE_ENV}
       - CHOKIDAR_USEPOLLING=true  # Add this to enable polling for file changes
-    volumes:
-      - ./Client:/app  # Mount local files into the container
-      - /app/node_modules  # Prevents conflicts with host node_modules
+
 
   backend:
     image: server-${BACKEND}
