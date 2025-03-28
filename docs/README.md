@@ -10,7 +10,9 @@
 - Movie List
 - Tv Series List
 - reviews
-- user wishlist
+- user wishlist for save watching,watched and to be watched
+- Admin Panel - Add / Edit / Delete Movies
+- Review Management
 
 **Technologies:**
 

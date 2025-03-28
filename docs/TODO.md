@@ -17,6 +17,12 @@
 ### Repository
 - Add repository functions
 
+### Exeption Handling
+
+### DTOS
+
+### 
+
 &nbsp; 
 
 # Frontend 

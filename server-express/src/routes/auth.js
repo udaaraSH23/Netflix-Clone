@@ -7,7 +7,7 @@ const User = require('../models/userModel.js');
 // POST /login
 
 router.get('/', async (req, res) => {
-    return "Auth Route"
+    res.send('Auth Route');
 });
 
 router.post('/login', async (req, res) => {
