@@ -27,6 +27,7 @@ export const register = async (req: Request, res: Response, next: NextFunction):
   }
 };
 
+//Get Refresh Token
 export const refreshToken = async (
   req: AuthenticatedRequest,
   res: Response,

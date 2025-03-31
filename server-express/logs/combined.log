@@ -1,0 +1,22 @@
+[2025-03-31 12:27:51] info: GET / 200 2ms
+[2025-03-31 12:29:22] info: Server is running on port 4444
+[2025-03-31 12:29:22] info: Connected to Database localhost
+[2025-03-31 12:29:32] info: GET /api/auth 200 2ms
+[2025-03-31 12:32:22] error: middlewareError
+[2025-03-31 12:32:22] error: undefined
+[2025-03-31 12:32:22] info: POST /api/auth/register 409 27ms
+[2025-03-31 12:33:11] error: middlewareError
+[2025-03-31 12:33:11] error: undefined
+[2025-03-31 12:33:11] info: POST /api/auth/register 409 6ms
+[2025-03-31 12:33:27] info: POST /api/auth/register 201 82ms
+[2025-03-31 12:34:13] info: Server is running on port 4444
+[2025-03-31 12:34:13] info: Connected to Database localhost
+[2025-03-31 12:35:58] info: POST /api/auth/login 200 146ms
+[2025-03-31 12:36:44] error: middlewareError
+[2025-03-31 12:36:44] error: undefined
+[2025-03-31 12:36:44] info: POST /api/auth/login 404 15ms
+[2025-03-31 12:36:51] info: POST /api/auth/login 200 66ms
+[2025-03-31 12:37:20] error: middlewareError
+[2025-03-31 12:37:20] error: undefined
+[2025-03-31 12:37:20] info: POST /api/auth/login 401 56ms
+[2025-03-31 12:37:47] info: POST /api/auth/login 200 93ms
