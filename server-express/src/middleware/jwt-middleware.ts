@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { AuthenticatedRequest } from '../types/express'; // Import your custom type
+import { InvalidRefreshToknError, InvalidTokenError, NoRefreshTokenError, NoTokenError } from '../Exceptions/jwt-error';
 
 interface TokenPayload {
   id: string;
@@ -18,9 +19,7 @@ export const verifyAccessToken = (
   const token = req.headers.authorization?.split(' ')[1];
 
   if (!token) {
-    return res
-      .status(401)
-      .json({ message: 'Access denied. No token provided.' });
+   throw new NoTokenError('Access token is required');
   }
 
   try {
@@ -31,7 +30,7 @@ export const verifyAccessToken = (
     req.user = decoded;
     next();
   } catch (error) {
-    return res.status(403).json({ message: 'Invalid or expired token' });
+    throw new InvalidTokenError('Invalid or expired token');
   }
 };
 
@@ -56,7 +55,7 @@ export const verifyRole = (roles: string[]) => {
 export const verifyRefreshToken = (req: AuthenticatedRequest, res: Response, next: NextFunction): void => {
     const refreshToken = req.cookies?.refreshToken;
     if (!refreshToken) {
-      res.status(400).json({ message: 'Refresh token is required' });
+      throw new NoRefreshTokenError('Refresh token is required');
     }
   
     try {
@@ -64,7 +63,7 @@ export const verifyRefreshToken = (req: AuthenticatedRequest, res: Response, nex
       req.user = decoded;  // Attach the user to the request object
       next();  // Proceed to the next middleware/controller
     } catch (error) {
-      res.status(403).json({ message: 'Invalid refresh token' });
+      throw new InvalidRefreshToknError('Invalid or expired token');
     }
   };
   

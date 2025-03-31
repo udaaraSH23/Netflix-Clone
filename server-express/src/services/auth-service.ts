@@ -43,7 +43,7 @@ export const loginUser = async (
     maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
   });
 
-  return { message: 'Logged in successfully', accessToken };
+  res.json({ message: 'Logged in successfully', accessToken });
 };
 
 // Register user

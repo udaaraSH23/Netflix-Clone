@@ -3,6 +3,7 @@ import { Request, Response, NextFunction } from "express";
 import { loginUser, registerUser,refreshAccessToken } from "../services/auth-service";
 import { RegisterRequestBody } from "src/validations/authValidation";
 import { AuthenticatedRequest } from "src/types/express";
+import { InvalidUserDataError } from "../Exceptions/jwt-error";
 
 //Login user
 export const login = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
@@ -36,8 +37,7 @@ export const refreshToken = async (
     const user = req.user;
 
     if (!user) {
-      res.status(400).json({ message: 'Invalid user data' });
-      return;
+      throw new InvalidUserDataError("Invalid user data");
     }
 
     // Call the service function to refresh the token using the decoded user data
