@@ -1,7 +1,7 @@
 {
   "watch": ["src"],
-  "ext": "js,json",
+  "ext": "js,json,ts",
   "ignore": ["node_modules", "logs", "temp", "cache"],
-  "exec": "node --inspect=0.0.0.0 src/server.js",
+  "exec": "node -r ts-node/register src/server.ts",
   "legacyWatch": true
 }
