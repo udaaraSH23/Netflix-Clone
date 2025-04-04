@@ -2,7 +2,7 @@
 import express from 'express';
 import { login, register } from '../controller/auth-controller';
 import { validate } from '../middleware/validate';
-import { registerSchema } from '../validations/authValidation';
+import { registerSchema } from '../validations/auth-validation';
 import { refreshToken } from '../controller/auth-controller';
 import { verifyRefreshToken } from '../middleware/jwt-middleware';
 

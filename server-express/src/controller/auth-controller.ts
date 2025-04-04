@@ -1,7 +1,7 @@
 // src/controllers/authController.ts
 import { Request, Response, NextFunction } from "express";
 import { loginUser, registerUser,refreshAccessToken } from "../services/auth-service";
-import { RegisterRequestBody } from "src/validations/authValidation";
+import { RegisterRequestBody } from "src/validations/auth-validation";
 import { AuthenticatedRequest } from "src/types/express";
 import { InvalidUserDataError } from "../Exceptions/jwt-error";
 
