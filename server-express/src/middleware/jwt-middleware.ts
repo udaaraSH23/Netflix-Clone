@@ -53,7 +53,7 @@ export const verifyRole = (roles: string[]) => {
  */
 // Middleware to verify the refresh token
 export const verifyRefreshToken = (req: AuthenticatedRequest, res: Response, next: NextFunction): void => {
-    const refreshToken = req.cookies?.refreshToken;
+    const refreshToken = req.cookies?.refreshToken; 
     if (!refreshToken) {
       throw new NoRefreshTokenError('Refresh token is required');
     }

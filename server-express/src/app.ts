@@ -1,4 +1,5 @@
 import express, { Application } from 'express';
+import cookieParser from 'cookie-parser';
 import { errorHandler } from './middleware/error-handler'; // Import the error handler
 import routes from './routes/routes'; // Import the routes
 
@@ -8,6 +9,10 @@ import logger from './config/logger';
 
 // Create an Express app
 const app: Application = express();
+
+// Middleware to parse cookies
+app.use(cookieParser());
+
 
 // Middleware to parse incoming JSON requests
 app.use(express.json());

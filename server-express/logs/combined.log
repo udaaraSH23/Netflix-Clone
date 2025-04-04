@@ -20,3 +20,51 @@
 [2025-03-31 12:37:20] error: undefined
 [2025-03-31 12:37:20] info: POST /api/auth/login 401 56ms
 [2025-03-31 12:37:47] info: POST /api/auth/login 200 93ms
+[2025-03-31 14:22:35] info: Server is running on port 4444
+[2025-03-31 14:22:50] info: Connected to Database localhost
+[2025-03-31 14:23:18] info: POST /api/auth/register 400 2ms
+[2025-03-31 14:23:18] error: middlewareError
+[2025-03-31 14:23:18] error: undefined
+[2025-03-31 14:24:01] error: middlewareError
+[2025-03-31 14:24:01] error: undefined
+[2025-03-31 14:24:01] info: POST /api/auth/register 409 6ms
+[2025-04-04 17:16:54] info: Server is running on port 4444
+[2025-04-04 17:16:57] info: Connected to Database localhost
+[2025-04-04 17:18:44] error: middlewareError
+[2025-04-04 17:18:44] error: undefined
+[2025-04-04 17:18:44] info: POST /api/auth/register 409 28ms
+[2025-04-04 17:18:52] info: POST /api/auth/login 200 95ms
+[2025-04-04 17:19:53] error: middlewareError
+[2025-04-04 17:19:53] error: undefined
+[2025-04-04 17:21:02] error: middlewareError
+[2025-04-04 17:21:02] error: undefined
+[2025-04-04 17:21:02] info: POST /api/auth/refresh-token 400 5ms
+[2025-04-04 17:23:06] info: Server is running on port 4444
+[2025-04-04 17:23:06] info: Connected to Database localhost
+[2025-04-04 17:23:09] error: middlewareError
+[2025-04-04 17:23:09] error: undefined
+[2025-04-04 17:23:09] info: POST /api/auth/refresh-token 400 8ms
+[2025-04-04 17:23:24] info: Server is running on port 4444
+[2025-04-04 17:23:24] info: Connected to Database localhost
+[2025-04-04 17:23:25] error: middlewareError
+[2025-04-04 17:23:25] error: undefined
+[2025-04-04 17:23:25] info: POST /api/auth/refresh-token 400 10ms
+[2025-04-04 17:23:36] info: Server is running on port 4444
+[2025-04-04 17:23:36] info: Connected to Database localhost
+[2025-04-04 17:24:48] info: Server is running on port 4444
+[2025-04-04 17:24:48] info: Connected to Database localhost
+[2025-04-04 17:24:48] error: middlewareError
+[2025-04-04 17:24:48] error: undefined
+[2025-04-04 17:24:48] info: POST /api/auth/refresh-token 400 9ms
+[2025-04-04 17:25:06] info: Server is running on port 4444
+[2025-04-04 17:25:06] info: Connected to Database localhost
+[2025-04-04 17:25:06] error: middlewareError
+[2025-04-04 17:25:06] error: undefined
+[2025-04-04 17:25:06] info: POST /api/auth/refresh-token 400 17ms
+[2025-04-04 17:31:10] info: Server is running on port 4444
+[2025-04-04 17:31:10] info: Connected to Database localhost
+[2025-04-04 17:31:16] info: Server is running on port 4444
+[2025-04-04 17:31:16] info: Connected to Database localhost
+[2025-04-04 17:31:18] info: POST /api/auth/refresh-token 200 14ms
+[2025-04-04 17:31:46] info: Server is running on port 4444
+[2025-04-04 17:31:46] info: Connected to Database localhost
