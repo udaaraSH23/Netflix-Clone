@@ -1,0 +1,16 @@
+[2025-04-05 17:53:22] info: Server is running on port 4444
+[2025-04-05 17:53:52] error: MongoDB connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+[2025-04-05 17:54:09] info: Server is running on port 4444
+[2025-04-05 17:54:17] info: Server is running on port 4444
+[2025-04-05 17:54:25] info: Server is running on port 4444
+[2025-04-05 17:54:55] error: MongoDB connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+[2025-04-05 17:55:44] info: Server is running on port 4444
+[2025-04-05 17:55:47] info: Server is running on port 4444
+[2025-04-05 17:56:17] error: MongoDB connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+[2025-04-05 17:56:25] info: Server is running on port 4444
+[2025-04-05 17:56:55] error: MongoDB connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+[2025-04-05 17:57:19] info: Server is running on port 4444
+[2025-04-05 17:57:44] info: Server is running on port 4444
+[2025-04-05 17:58:14] error: MongoDB connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+[2025-04-05 17:58:26] info: Server is running on port 4444
+[2025-04-05 17:58:56] error: MongoDB connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017

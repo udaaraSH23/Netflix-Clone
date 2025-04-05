@@ -1,7 +1,7 @@
 import mongoose, { Document, Schema } from 'mongoose';
 
 // Define the interface for the TVSeries model
-interface ITVSeries extends Document {
+export interface ITvSeries extends Document {
   id: number;
   name: string;
   description: string;
@@ -60,6 +60,6 @@ const tvSeriesSchema: Schema = new Schema(
 );
 
 // Create the model based on the interface and schema
-const TVSeries = mongoose.model<ITVSeries>('TVSeries', tvSeriesSchema);
+const TVSeries = mongoose.model<ITvSeries>('TVSeries', tvSeriesSchema);
 
 export default TVSeries;
