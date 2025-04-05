@@ -19,7 +19,7 @@ export const getMoviesByCategory = async (category: string): Promise<IMovie[]> =
 };
 
 // Get a movie by ID
-export const getMovieById = async (id: string): Promise<IMovie | null> => {
+export const getMovieById = async (id: number): Promise<IMovie | null> => {
   try {
     return await Movie.findOne({ id });
   } catch (error) {
@@ -28,7 +28,7 @@ export const getMovieById = async (id: string): Promise<IMovie | null> => {
 };
 
 // Create a new movie
-export const createMovie = async (movieData: Omit<IMovie, '_id'>): Promise<IMovie> => {
+export const createMovie = async (movieData:IMovie): Promise<IMovie> => {
   try {
     const newMovie = new Movie(movieData);
     return await newMovie.save();
@@ -38,7 +38,7 @@ export const createMovie = async (movieData: Omit<IMovie, '_id'>): Promise<IMovi
 };
 
 // Update an existing movie
-export const updateMovie = async (id: string, updatedData: Partial<IMovie>): Promise<IMovie | null> => {
+export const updateMovie = async (id: number, updatedData: Partial<IMovie>): Promise<IMovie | null> => {
   try {
     return await Movie.findOneAndUpdate({ id }, updatedData, { new: true, runValidators: true });
   } catch (error) {
@@ -47,7 +47,7 @@ export const updateMovie = async (id: string, updatedData: Partial<IMovie>): Pro
 };
 
 // Delete a movie by ID
-export const deleteMovie = async (id: string): Promise<{ deletedCount: number }> => {
+export const deleteMovie = async (id: number): Promise<{ deletedCount: number }> => {
   try {
     return await Movie.deleteOne({ id });
   } catch (error) {

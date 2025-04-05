@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { IMovie } from '../models/movie-model'; 
+import Movie from  '../models/movie-model'
 import * as movieService from '../services/movie-service';
 
 // GET /movies
@@ -9,6 +9,28 @@ export const getMoviesController = async (req: Request, res: Response): Promise<
     res.json(movies);
   } catch (error) {
     res.status(500).json({ message: 'An error occurred while fetching movies.' });
+  }
+};
+
+// GET /movies/:id
+export const getMovieByIdController = async (req: Request, res: Response): Promise<void> => {
+  const { id } = req.params;
+  const movieId = Number(id); // Convert to number
+
+  // Check if the id is a valid number
+  if (isNaN(movieId)) {
+    res.status(400).json({ message: 'Invalid movie ID' });
+    return;
+  }
+  try {
+    const movie = await movieService.getMovieById(movieId);
+    if (!movie) {
+      res.status(404).json({ message: 'Movie not found' });
+      return;
+    }
+    res.json(movie);
+  } catch (error) {
+    res.status(500).json({ message: 'Server error' });
   }
 };
 
@@ -37,10 +59,14 @@ export const createMovieController = async (req: Request, res: Response): Promis
         return;
     }
 
-    // const movieData: Omit<IMovie, "_id"> = { id, name, description, rating, category, posterUrl, backdropUrl, videoUrl, year };
+    // Your movie data
+  const movieData = { id, name, description, rating, category, posterUrl, backdropUrl, videoUrl, year };
+
+// Create a new Mongoose document from the model
+const movieInstance = new Movie(movieData);
 
     // // Call the service to create the movie
-    // const newMovie = await movieService.createMovie(movieData);
+    const newMovie = await movieInstance.save();
 
     // res.status(201).json(newMovie);
   } catch (error) {
@@ -48,27 +74,22 @@ export const createMovieController = async (req: Request, res: Response): Promis
   }
 };
 
-// GET /movies/:id
-export const getMovieByIdController = async (req: Request, res: Response): Promise<void> => {
-  const { id } = req.params;
-  try {
-    const movie = await movieService.getMovieById(id);
-    if (!movie) {
-      res.status(404).json({ message: 'Movie not found' });
-      return;
-    }
-    res.json(movie);
-  } catch (error) {
-    res.status(500).json({ message: 'Server error' });
-  }
-};
+
 
 // PUT /movies/:id
 export const updateMovieController = async (req: Request, res: Response): Promise<void> => {
   const { id } = req.params;
+  const movieId = Number(id);
+
+  // Check if the id is a valid number
+  if (isNaN(movieId)) {
+    res.status(400).json({ message: 'Invalid movie ID' });
+    return;
+  }
+  
   const updatedMovieData = req.body;
   try {
-    const updatedMovie = await movieService.updateMovie(id, updatedMovieData);
+    const updatedMovie = await movieService.updateMovie(movieId, updatedMovieData);
     if (!updatedMovie) {
       res.status(404).json({ message: 'Movie not found' });
     }
@@ -81,8 +102,16 @@ export const updateMovieController = async (req: Request, res: Response): Promis
 // DELETE /movies/:id
 export const deleteMovieController = async (req: Request, res: Response): Promise<void> => {
   const { id } = req.params;
+  const movieId = Number(id); // Convert to number
+
+  // Check if the id is a valid number
+  if (isNaN(movieId)) {
+    res.status(400).json({ message: 'Invalid movie ID' });
+    return;
+  }
+
   try {
-    const result = await movieService.deleteMovie(id);
+    const result = await movieService.deleteMovie(movieId);
     if (result.deletedCount === 0) {
       res.status(404).json({ message: 'Movie not found' });
     }
