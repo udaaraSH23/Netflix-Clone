@@ -1,21 +1,20 @@
 # To-Do List
 - [x] Set up project structure
-- [ ] Refactor authentication logic
+- [x] Refactor authentication logic
 - [ ] Add API documentation
 
 &nbsp; 
 # Backend - Express
 
 ### Auth
-- [ ] refresh Tokens
-- [ ] Session management
-- [ ] Password Hashing
+- [x] refresh Tokens
+- [x] Session management
+- [x] Password Hashing
+- [] Role base Access
 
 ### Controller
-- Separate to controller from routes
-- Create Service Classes
+- [] Media Controller
 ### Repository
-- Add repository functions
 
 ### Exeption Handling
 

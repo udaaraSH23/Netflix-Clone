@@ -9,7 +9,7 @@
 - Authorization / Authentication with Role Management
 - Refresh Token
 - Jwt Utils
-- Session Mangement
+- Refresh Tokens
 
 **Rate Limiting**
 - Rate Limiting for Authentication

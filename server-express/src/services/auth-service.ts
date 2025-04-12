@@ -84,4 +84,15 @@ export const refreshAccessToken = async (
   return newAccessToken;
 };
 
+// Assign user to admin role
+export const assignUserToAdminRole = async (userId: string) => {
+  const user = await User.findById(userId);
+  if (!user) throw new UserNotFoundException('User not found');
+
+  user.role = 'admin';
+  await user.save();
+
+  return { message: 'User assigned to admin role successfully', userId };
+};
+
 

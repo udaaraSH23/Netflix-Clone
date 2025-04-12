@@ -1,10 +1,9 @@
 // src/routes/authRoutes.ts
 import express from 'express';
-import { login, register } from '../controller/auth-controller';
+import { login, register, refreshToken, assignAdminRole } from '../controller/auth-controller';
 import { validate } from '../middleware/validate';
 import { registerSchema } from '../validations/auth-validation';
-import { refreshToken } from '../controller/auth-controller';
-import { verifyRefreshToken } from '../middleware/jwt-middleware';
+import { authenticateToken, checkUserRole, checkAdminRole,authenticateRefreshToken } from '../middleware/auth-middlewear'; // Import the authentication middleware
 
 const authRoutes = express.Router();
 
@@ -14,6 +13,7 @@ authRoutes.get('/', (req, res) => {
 });
 authRoutes.post('/login', login); // User Login
 authRoutes.post('/register', validate(registerSchema), register); // User Registration
-authRoutes.post('/refresh-token', verifyRefreshToken, refreshToken); // Refresh Token
+authRoutes.post('/refresh-token', authenticateRefreshToken, checkUserRole, refreshToken); // Refresh Token
+authRoutes.post('/assign-admin', authenticateToken, checkAdminRole, assignAdminRole); // Assign user to admin role
 
 export default authRoutes;

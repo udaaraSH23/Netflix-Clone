@@ -1,6 +1,12 @@
-[2025-04-05 17:53:52] error: MongoDB connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
-[2025-04-05 17:54:55] error: MongoDB connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
-[2025-04-05 17:56:17] error: MongoDB connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
-[2025-04-05 17:56:55] error: MongoDB connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
-[2025-04-05 17:58:14] error: MongoDB connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
-[2025-04-05 17:58:56] error: MongoDB connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+[2025-04-12 13:21:07] error: middlewareError
+[2025-04-12 13:21:07] error: undefined
+[2025-04-12 13:22:46] error: middlewareError
+[2025-04-12 13:22:46] error: undefined
+[2025-04-12 13:22:54] error: middlewareError
+[2025-04-12 13:22:54] error: undefined
+[2025-04-12 17:04:35] error: middlewareError
+[2025-04-12 17:04:35] error: undefined
+[2025-04-12 17:04:47] error: middlewareError
+[2025-04-12 17:04:47] error: undefined
+[2025-04-12 17:11:14] error: middlewareError
+[2025-04-12 17:11:14] error: undefined

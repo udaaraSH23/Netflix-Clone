@@ -1,54 +1,47 @@
-[2025-04-05 17:53:22] info: Server is running on port 4444
-[2025-04-05 17:53:52] error: MongoDB connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
-[2025-04-05 17:54:09] info: Server is running on port 4444
-[2025-04-05 17:54:17] info: Server is running on port 4444
-[2025-04-05 17:54:25] info: Server is running on port 4444
-[2025-04-05 17:54:55] error: MongoDB connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
-[2025-04-05 17:55:44] info: Server is running on port 4444
-[2025-04-05 17:55:47] info: Server is running on port 4444
-[2025-04-05 17:56:17] error: MongoDB connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
-[2025-04-05 17:56:25] info: Server is running on port 4444
-[2025-04-05 17:56:55] error: MongoDB connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
-[2025-04-05 17:57:19] info: Server is running on port 4444
-[2025-04-05 17:57:44] info: Server is running on port 4444
-[2025-04-05 17:58:14] error: MongoDB connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
-[2025-04-05 17:58:26] info: Server is running on port 4444
-[2025-04-05 17:58:56] error: MongoDB connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
-[2025-04-11 12:24:14] info: Server is running on port 4444
-[2025-04-11 12:24:14] info: Connected to Database localhost
-[2025-04-11 12:26:03] info: Server is running on port 4444
-[2025-04-11 12:26:03] info: Connected to Database localhost
-[2025-04-11 12:26:07] info: Server is running on port 4444
-[2025-04-11 12:26:07] info: Connected to Database localhost
-[2025-04-11 12:26:25] info: Server is running on port 4444
-[2025-04-11 12:26:25] info: Connected to Database localhost
-[2025-04-11 12:26:30] info: Server is running on port 4444
-[2025-04-11 12:26:30] info: Connected to Database localhost
-[2025-04-11 12:26:54] info: Server is running on port 4444
-[2025-04-11 12:26:54] info: Connected to Database localhost
-[2025-04-11 12:29:08] info: Server is running on port 4444
-[2025-04-11 12:29:08] info: Connected to Database localhost
-[2025-04-11 12:29:16] info: Server is running on port 4444
-[2025-04-11 12:29:16] info: Connected to Database localhost
-[2025-04-11 12:29:19] info: Server is running on port 4444
-[2025-04-11 12:29:19] info: Connected to Database localhost
-[2025-04-11 12:30:46] info: Server is running on port 4444
-[2025-04-11 12:30:46] info: Connected to Database localhost
-[2025-04-11 12:31:29] info: Server is running on port 4444
-[2025-04-11 12:31:29] info: Connected to Database localhost
-[2025-04-11 12:31:39] info: Server is running on port 4444
-[2025-04-11 12:31:39] info: Connected to Database localhost
-[2025-04-11 12:32:39] info: Server is running on port 4444
-[2025-04-11 12:32:39] info: Connected to Database localhost
-[2025-04-11 12:33:07] info: Server is running on port 4444
-[2025-04-11 12:33:07] info: Connected to Database localhost
-[2025-04-11 12:33:12] info: Server is running on port 4444
-[2025-04-11 12:33:12] info: Connected to Database localhost
-[2025-04-11 12:35:08] info: Server is running on port 4444
-[2025-04-11 12:35:08] info: Connected to Database localhost
-[2025-04-11 12:38:48] info: Server is running on port 4444
-[2025-04-11 12:38:48] info: Connected to Database localhost
-[2025-04-11 12:38:50] info: Server is running on port 4444
-[2025-04-11 12:38:50] info: Connected to Database localhost
-[2025-04-11 12:40:10] info: Server is running on port 4444
-[2025-04-11 12:40:10] info: Connected to Database localhost
+[2025-04-12 13:11:30] info: Server is running on port 4444
+[2025-04-12 13:11:30] info: Connected to Database localhost
+[2025-04-12 13:12:10] info: GET / 200 4ms
+[2025-04-12 13:18:34] info: POST /api/auth/register 201 76ms
+[2025-04-12 13:19:24] info: POST /api/auth/login 200 115ms
+[2025-04-12 13:21:07] error: middlewareError
+[2025-04-12 13:21:07] error: undefined
+[2025-04-12 13:21:07] info: POST /api/auth/refresh-token 401 8ms
+[2025-04-12 13:22:28] info: POST /api/auth/login 200 154ms
+[2025-04-12 13:22:46] error: middlewareError
+[2025-04-12 13:22:46] error: undefined
+[2025-04-12 13:22:46] info: POST /api/auth/refresh-token 401 1ms
+[2025-04-12 13:22:54] error: middlewareError
+[2025-04-12 13:22:54] error: undefined
+[2025-04-12 13:22:54] info: POST /api/auth/refresh-token 401 3ms
+[2025-04-12 13:23:20] info: POST /api/auth/refresh-token 200 5ms
+[2025-04-12 13:23:35] info: POST /api/auth/refresh-token 200 2ms
+[2025-04-12 13:23:41] info: POST /api/auth/refresh-token 200 1ms
+[2025-04-12 13:23:45] info: POST /api/auth/refresh-token 200 1ms
+[2025-04-12 13:30:52] info: Server is running on port 4444
+[2025-04-12 13:30:52] info: Connected to Database localhost
+[2025-04-12 13:31:09] info: Server is running on port 4444
+[2025-04-12 13:31:09] info: Connected to Database localhost
+[2025-04-12 13:32:52] info: POST /api/auth/assign-admin 200 70ms
+[2025-04-12 16:57:56] info: Server is running on port 4444
+[2025-04-12 16:57:56] info: Connected to Database localhost
+[2025-04-12 17:00:41] info: Server is running on port 4444
+[2025-04-12 17:00:41] info: Connected to Database localhost
+[2025-04-12 17:02:26] info: Server is running on port 4444
+[2025-04-12 17:02:26] info: Connected to Database localhost
+[2025-04-12 17:04:27] info: Server is running on port 4444
+[2025-04-12 17:04:27] info: Connected to Database localhost
+[2025-04-12 17:04:35] error: middlewareError
+[2025-04-12 17:04:35] error: undefined
+[2025-04-12 17:04:36] info: POST /api/auth/assign-admin 403 21ms
+[2025-04-12 17:04:47] error: middlewareError
+[2025-04-12 17:04:47] error: undefined
+[2025-04-12 17:04:47] info: POST /api/auth/refresh-token 403 5ms
+[2025-04-12 17:09:51] info: Server is running on port 4444
+[2025-04-12 17:09:51] info: Connected to Database localhost
+[2025-04-12 17:10:26] info: Server is running on port 4444
+[2025-04-12 17:10:26] info: Connected to Database localhost
+[2025-04-12 17:10:33] info: POST /api/auth/refresh-token 200 18ms
+[2025-04-12 17:10:57] info: POST /api/auth/admin-assign 404 0ms
+[2025-04-12 17:11:14] error: middlewareError
+[2025-04-12 17:11:14] error: undefined
+[2025-04-12 17:11:14] info: POST /api/auth/assign-admin 403 6ms

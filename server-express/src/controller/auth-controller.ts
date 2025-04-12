@@ -1,6 +1,6 @@
 // src/controllers/authController.ts
 import { Request, Response, NextFunction } from "express";
-import { loginUser, registerUser,refreshAccessToken } from "../services/auth-service";
+import { loginUser, registerUser, refreshAccessToken, assignUserToAdminRole } from "../services/auth-service";
 import { RegisterRequestBody } from "src/validations/auth-validation";
 import { AuthenticatedRequest } from "src/types/express";
 import { InvalidUserDataError } from "../Exceptions/jwt-error";
@@ -49,5 +49,16 @@ export const refreshToken = async (
   } catch (error) {
     // Pass any errors to the error handler middleware
     next(error);
+  }
+};
+
+// Assign user to admin role
+export const assignAdminRole = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  try {
+    const { userId } = req.body;
+    const response = await assignUserToAdminRole(userId);
+    res.status(200).json(response);
+  } catch (error) {
+    next(error); // Pass error to the error handler
   }
 };
