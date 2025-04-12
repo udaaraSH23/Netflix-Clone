@@ -45,3 +45,25 @@
 [2025-04-12 17:11:14] error: middlewareError
 [2025-04-12 17:11:14] error: undefined
 [2025-04-12 17:11:14] info: POST /api/auth/assign-admin 403 6ms
+[2025-04-12 17:18:48] info: Server is running on port 4444
+[2025-04-12 17:18:48] info: Connected to Database localhost
+[2025-04-12 17:19:01] info: Server is running on port 4444
+[2025-04-12 17:19:01] info: Connected to Database localhost
+[2025-04-12 17:19:05] info: Server is running on port 4444
+[2025-04-12 17:19:05] info: Connected to Database localhost
+[2025-04-12 17:19:31] info: Server is running on port 4444
+[2025-04-12 17:19:31] info: Connected to Database localhost
+[2025-04-12 17:21:21] info: Server is running on port 4444
+[2025-04-12 17:21:21] info: Connected to Database localhost
+[2025-04-12 17:25:39] info: Server is running on port 4444
+[2025-04-12 17:25:39] info: Connected to Database localhost
+[2025-04-12 17:33:35] info: Server is running on port 4444
+[2025-04-12 17:33:35] info: Connected to Database localhost
+[2025-04-12 17:34:43] info: Server is running on port 4444
+[2025-04-12 17:34:43] info: Connected to Database localhost
+[2025-04-12 17:35:26] info: Server is running on port 4444
+[2025-04-12 17:35:27] info: Connected to Database localhost
+[2025-04-12 17:35:50] info: Server is running on port 4444
+[2025-04-12 17:35:50] info: Connected to Database localhost
+[2025-04-12 17:36:31] info: Server is running on port 4444
+[2025-04-12 17:36:31] info: Connected to Database localhost

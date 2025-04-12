@@ -2,6 +2,7 @@ import express, { Application } from 'express';
 import cookieParser from 'cookie-parser';
 import { errorHandler } from './middleware/error-handler'; // Import the error handler
 import routes from './routes/routes'; // Import the routes
+import mediaRouter from './routes/media'; // Import the media route
 
 // Import the Winston logger and the express-winston middleware
 import expressWinston from 'express-winston';
@@ -29,6 +30,7 @@ app.use(expressWinston.logger({
 
 // Routes
 app.use('/api', routes);
+app.use('/media', mediaRouter); // Use the media route
 
 // Error handling middleware for logging errors (will log errors to your log file)
 app.use(expressWinston.errorLogger({
