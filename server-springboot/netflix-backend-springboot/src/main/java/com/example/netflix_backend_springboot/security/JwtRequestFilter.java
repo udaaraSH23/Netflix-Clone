@@ -27,7 +27,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     private JwtUtil jwtUtil; // Utility class for handling JWT operations like extracting username and validating tokens.
 
     @Autowired
-    private UserService userDetailsService; // Service to load user details from the database.
+    private UserService userService; // Service to load user details from the database.
 
     private static final Logger logger = LoggerFactory.getLogger(JwtRequestFilter.class);
 
@@ -55,11 +55,11 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 
             // Load user details from the database using the extracted username.
-            UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
+            UserDetails userDetails = this.userService.loadUserByUsername(username);
 
             // Validate the JWT token against the loaded user details.
             try {
-                if (jwtUtil.validateToken(jwt, userDetails)) {
+                if (jwtUtil.validateToken(jwt, userDetails)) { // Ensure validateToken is implemented in JwtUtil.
 
                     // Create an authentication token for the user.
                     UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(

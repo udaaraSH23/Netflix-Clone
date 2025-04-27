@@ -7,6 +7,7 @@ import com.example.netflix_backend_springboot.exceptions.jwt.UsernameExtractionE
 
 import io.jsonwebtoken.*;
 import org.springframework.stereotype.Component;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -105,5 +106,22 @@ public class JwtUtil {
         } catch (Exception e) {
             throw new UsernameExtractionException();
         }
+    }
+
+    public boolean validateToken(String token, UserDetails userDetails) {
+        final String username = extractUsername(token); // Extract username from the token.
+        return (username.equals(userDetails.getUsername()) && !isTokenExpired(token)); // Validate username and expiration.
+    }
+
+    private boolean isTokenExpired(String token) {
+        return extractExpiration(token).before(new Date()); // Check if the token is expired.
+    }
+
+    private Date extractExpiration(String token) {
+        return Jwts.parser()
+                .setSigningKey(ACCESS_TOKEN_SECRET)
+                .parseClaimsJws(token)
+                .getBody()
+                .getExpiration();
     }
 }

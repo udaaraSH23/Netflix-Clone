@@ -4,8 +4,10 @@ import com.example.netflix_backend_springboot.model.User;
 import com.example.netflix_backend_springboot.repository.UserRepository;
 import com.example.netflix_backend_springboot.util.PasswordUtil; // Import PasswordUtil
 import com.example.netflix_backend_springboot.model.Role; // Import Role enum
+import com.example.netflix_backend_springboot.model.CustomUserDetails; // Import CustomUserDetails
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.List;
 import java.util.Optional;
@@ -66,5 +68,13 @@ public class UserService {
         } catch (IllegalArgumentException e) {
             throw new RuntimeException("Invalid role: " + role);
         }
+    }
+
+    public UserDetails loadUserByUsername(String username) {
+        Optional<com.example.netflix_backend_springboot.model.User> userOptional = findByUsername(username);
+        if (userOptional.isEmpty()) {
+            throw new RuntimeException("User not found with username: " + username);
+        }
+        return new CustomUserDetails(userOptional.get()); // Use CustomUserDetails
     }
 }
