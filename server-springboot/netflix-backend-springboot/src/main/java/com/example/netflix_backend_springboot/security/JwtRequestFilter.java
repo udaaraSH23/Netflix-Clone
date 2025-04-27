@@ -17,6 +17,8 @@ import java.io.IOException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import io.jsonwebtoken.JwtException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Component
 public class JwtRequestFilter extends OncePerRequestFilter {
@@ -26,6 +28,8 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
     @Autowired
     private UserService userDetailsService; // Service to load user details from the database.
+
+    private static final Logger logger = LoggerFactory.getLogger(JwtRequestFilter.class);
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
@@ -54,18 +58,23 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
 
             // Validate the JWT token against the loaded user details.
-            if (jwtUtil.validateToken(jwt, userDetails)) {
+            try {
+                if (jwtUtil.validateToken(jwt, userDetails)) {
 
-                // Create an authentication token for the user.
-                UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
-                        userDetails, null, userDetails.getAuthorities());
+                    // Create an authentication token for the user.
+                    UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
+                            userDetails, null, userDetails.getAuthorities());
 
-                // Set additional details for the authentication token (e.g., request details).
-                usernamePasswordAuthenticationToken
-                        .setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                    // Set additional details for the authentication token (e.g., request details).
+                    usernamePasswordAuthenticationToken
+                            .setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
-                // Set the authentication token in the SecurityContext.
-                SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+                    // Set the authentication token in the SecurityContext.
+                    SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+                }
+            } catch (JwtException e) {
+                // Handle invalid JWT token (e.g., expired or malformed).
+                logger.error("Invalid JWT token: " + e.getMessage());
             }
         }
 

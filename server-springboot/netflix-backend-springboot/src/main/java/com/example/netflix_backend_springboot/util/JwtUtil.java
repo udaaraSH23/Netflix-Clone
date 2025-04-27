@@ -1,5 +1,10 @@
 package com.example.netflix_backend_springboot.util;
 
+import com.example.netflix_backend_springboot.exceptions.jwt.InvalidAccessTokenException;
+import com.example.netflix_backend_springboot.exceptions.jwt.InvalidRefreshTokenException;
+import com.example.netflix_backend_springboot.exceptions.jwt.UserRoleExtractionException;
+import com.example.netflix_backend_springboot.exceptions.jwt.UsernameExtractionException;
+
 import io.jsonwebtoken.*;
 import org.springframework.stereotype.Component;
 
@@ -51,7 +56,7 @@ public class JwtUtil {
                     .parseClaimsJws(token)
                     .getBody();
         } catch (JwtException e) {
-            throw new RuntimeException("Invalid or expired access token");
+            throw new InvalidAccessTokenException();
         }
     }
 
@@ -63,7 +68,7 @@ public class JwtUtil {
                     .parseClaimsJws(token)
                     .getBody();
         } catch (JwtException e) {
-            throw new RuntimeException("Invalid or expired refresh token");
+            throw new InvalidRefreshTokenException();
         }
     }
 
@@ -85,7 +90,7 @@ public class JwtUtil {
                     .getBody();
             return claims.get("role", String.class);
         } catch (Exception e) {
-            throw new RuntimeException("Failed to extract user role");
+            throw new UserRoleExtractionException();
         }
     }
 
@@ -98,7 +103,7 @@ public class JwtUtil {
                     .getBody();
             return claims.getSubject();
         } catch (Exception e) {
-            throw new RuntimeException("Failed to extract username from token");
+            throw new UsernameExtractionException();
         }
     }
 }
