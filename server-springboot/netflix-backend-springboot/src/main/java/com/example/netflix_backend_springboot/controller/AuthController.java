@@ -1,5 +1,6 @@
 package com.example.netflix_backend_springboot.controller;
 
+import com.example.netflix_backend_springboot.dto.LoginRequest;
 import com.example.netflix_backend_springboot.model.User;
 import com.example.netflix_backend_springboot.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestParam String username, @RequestParam String password) {
-        return authService.authenticate(username, password); // Return the JWT token
+    public String login(@RequestBody LoginRequest loginRequest) {
+        return authService.authenticate(loginRequest.getUsername(), loginRequest.getPassword()); // Return the JWT token
     }
 }
