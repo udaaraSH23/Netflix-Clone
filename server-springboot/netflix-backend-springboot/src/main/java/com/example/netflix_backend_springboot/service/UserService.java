@@ -2,11 +2,13 @@ package com.example.netflix_backend_springboot.service;
 
 import com.example.netflix_backend_springboot.model.User;
 import com.example.netflix_backend_springboot.repository.UserRepository;
+import com.example.netflix_backend_springboot.util.PasswordUtil; // Import PasswordUtil
+import com.example.netflix_backend_springboot.model.Role; // Import Role enum
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -41,5 +43,28 @@ public class UserService {
 
     public void deleteUser(int id) {
         userRepository.deleteById(id);
+    }
+
+    public Optional<User> findByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
+
+    public String encodePassword(String password) {
+        return PasswordUtil.encodePassword(password);
+    }
+
+    public boolean matchesPassword(String rawPassword, String encodedPassword) {
+        return PasswordUtil.matches(rawPassword, encodedPassword);
+    }
+
+    public void assignRole(int userId, String role) {
+        User user = getUserById(userId);
+        try {
+            Role validRole = Role.valueOf(role.toUpperCase()); // Validate role
+            user.setRole(validRole);
+            userRepository.save(user);
+        } catch (IllegalArgumentException e) {
+            throw new RuntimeException("Invalid role: " + role);
+        }
     }
 }

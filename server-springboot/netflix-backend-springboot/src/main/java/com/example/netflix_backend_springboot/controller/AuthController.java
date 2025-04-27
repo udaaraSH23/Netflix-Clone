@@ -17,6 +17,11 @@ public class AuthController {
         this.authService = authService;
     }
 
+    @GetMapping
+    public String welcome() {
+        return "Auth Route Testing - OK!";
+    }
+
     @PostMapping("/register")
     public User register(@RequestBody User user) {
         return authService.register(user);
